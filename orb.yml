@@ -9,7 +9,7 @@ commands:
                 type: string
                 default: World!
         steps:
-            - step1:
+            - perform-greeting:
                   name: Perform Greeting
                   command: |
                       echo "Hello, << parameters.subject >>"
