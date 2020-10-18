@@ -2,21 +2,14 @@
 version: 2.1
 
 orbs:
-  orb-tools: circleci/orb-tools@8
+  orb-tools: circleci/orb-tools@10.0.1
 
 workflows:
   main:
     jobs:
-      - orb-tools/publish-dev:
-          orb-name: mattwelke/circleci-orb-test
-          orb-path: orb.yml
-          validate: true
-          checkout: true
-      - orb-tools/dev-promote-prod:
+      - orb-tools/publish:
           filters:
             branches:
               only: master
-          orb-name: mattwelke/circleci-orb-test
-          publish-version-tag: false
-          requires:
-            - orb-tools/publish-dev
+          orb-path: orb.yml
+          orb-ref: mattwelke/circleci-orb-test@1.0.0
