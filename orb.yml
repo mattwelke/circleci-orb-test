@@ -3,12 +3,13 @@ version: 2.1
 description: Testing out CircleCI orbs. Contains a command that prints to STDOUT.
 
 commands:
-    greet:
-        parameters:
-            subject:
-                type: string
-                default: World!
-        steps:
-            - name: Perform Greeting
-              command: |
-                  echo "Hello, << parameters.subject >>"
+  greet:
+    parameters:
+      subject:
+        type: string
+        default: World!
+    steps:
+      - run:
+          name: Perform Greeting
+          command: |
+            echo "Hello, << parameters.subject >>"
