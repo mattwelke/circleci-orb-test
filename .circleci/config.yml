@@ -12,4 +12,4 @@ workflows:
             branches:
               only: master
           orb-path: orb.yml
-          orb-ref: mattwelke/circleci-orb-test@1.0.0
+          orb-ref: mattwelke/circleci-orb-test@0.0.2

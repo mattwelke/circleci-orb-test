@@ -2,6 +2,21 @@ version: 2.1
 
 description: Testing out CircleCI orbs. Contains a command that prints to STDOUT.
 
+executors:
+  default:
+    docker:
+      - image: cimg/node:12.16
+        auth:
+          username: << parameters.docker-hub-id >>
+          password: << parameters.docker-hub-password >>
+    parameters:
+      docker-hub-id:
+        type: env_var_name
+        default: DOCKER_HUB_ID
+      docker-hub-password:
+        type: env_var_name
+        default: DOCKER_HUB_PASSWORD
+
 commands:
   greet:
     parameters:
